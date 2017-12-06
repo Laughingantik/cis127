@@ -18,18 +18,7 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="bag.h" />
-    <ClInclude Include="Presidents.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="bag.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="PresidentDataBase.txt" />
-    <Text Include="PresidentNumberName.txt" />
-  </ItemGroup>
-  <PropertyGroup Label="Globals">
+ <PropertyGroup Label="Globals">
     <ProjectGuid>{3390CD98-AC5C-4749-A81A-0E4E52FE62E7}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>CIS127Projects_Anderson</RootNamespace>
