@@ -1,6 +1,7 @@
-#include <list>
-#include <iostream>
+#include <cctype>
 #include <fstream>
+#include <iostream>
+#include <list>
 #include <string>
 #include "president.h"
 
