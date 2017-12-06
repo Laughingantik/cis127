@@ -3,10 +3,11 @@
 #include <fstream>
 #include <string>
 #include "president.h"
-typedef Presidents BAG_ELEMENT_TYPE;
-#include "bag.h"
 
 using namespace std;
+
+typedef Presidents BAG_ELEMENT_TYPE;
+#include "bag.cpp"
 
 void printInstructions()
 {
@@ -38,7 +39,8 @@ bag loadPresidents()
     getline(file, party);
     getline(file, previousOffice);
     getline(file, vicePresident);
-    presidents.add(Presidents(atoi(number.c_str()), name, birthDeath, tookOffice, leftOffice, party, previousOffice, vicePresident));
+    Presidents pres(atoi(number.c_str()), name, birthDeath, tookOffice, leftOffice, party, previousOffice, vicePresident);
+    presidents.add(pres);
   }
   return presidents;
 }
@@ -46,13 +48,12 @@ bag loadPresidents()
 int main()
 {
   printInstructions();
-  bag presidents = loadPresidents();
+  bag presBag = loadPresidents();
   // ...
-  Presidents president;
-  for (presidents.first(); !presidents.isDone(); presidents.next())
+  for (presBag.first(); !presBag.isDone(); presBag.next())
   {
-    president = presidents.currentItem();
-    cout << president.getPresidentNumber() << ": " << president.getPresidentName() << endl;
+    Presidents pres = presBag.currentItem();
+    cout << pres.getPresidentNumber() << ": " << pres.getPresidentName() << endl;
   }
   // ...
   // int guess;
