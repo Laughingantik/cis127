@@ -1,0 +1,10 @@
+CIS 127, Gavin Anderson, Assignment 9.2
+   Pay    Hours    Gross    Income    FICA      Net   Employee
+  Rate   Worked      Pay      Tax      Tax      Pay   Name
+ =====   ======   ======   ======   ======   ======   ========
+ 10.45    38.00   397.10    26.16    30.38   340.56 Greene, Ross
+ 12.00    42.00   516.00    89.42    39.47   387.11 Kristner, Mary
+  9.99    30.50   304.69    36.34    23.31   245.04 Nicholson, Mellisa
+ 11.57    40.00   462.80    63.49    35.40   363.91 Woodley, Samuel
+ ------ ------ ------ ------ ------
+Totals   150.50  1680.59   215.41   150.50  1336.62
