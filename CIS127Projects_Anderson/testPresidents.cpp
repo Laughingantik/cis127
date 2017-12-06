@@ -2,9 +2,9 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "president.cpp"
+#include "president.h"
 typedef Presidents BAG_ELEMENT_TYPE;
-#include "bag.cpp"
+#include "bag.h"
 
 using namespace std;
 
