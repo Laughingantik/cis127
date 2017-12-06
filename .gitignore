@@ -1,4 +1,7 @@
 
+# ide
+.vs
+
 # databases
 *.opendb
 *.db
