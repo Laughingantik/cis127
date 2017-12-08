@@ -69,16 +69,17 @@ int main()
   printHeading();
   printInstructions();
   bag presBag = loadPresidents();
-  int index, guess, correct = 0, total = 0;
+  int index, answer, guess, correct = 0, total = 0;
   srand((unsigned) time(0));
   do {
     index = rand() % presBag.size();
     total += 1;
     presBag.setIndex(index);
-    guess = askPresidentNumber(presBag.currentItem().getPresidentName());
+    answer = presBag.currentItem().getPresidentNumber();
+    cout << "guess: " << to_string(guess) << "; index: " << to_string(index) << endl;
     if (guess != -1)
     {
-      if (guess == index)
+      if (guess == answer)
       {
         cout << "Congratulations! That is correct." << endl;
         correct += 1;
