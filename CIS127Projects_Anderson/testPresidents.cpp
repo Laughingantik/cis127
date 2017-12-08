@@ -41,17 +41,26 @@ bag loadPresidents()
     getline(file, party);
     getline(file, previousOffice);
     getline(file, vicePresident);
-    Presidents pres(atoi(number.c_str()), name, birthDeath, tookOffice, leftOffice, party, previousOffice, vicePresident);
-    presidents.add(pres);
+    if (number != "0")
+    {
+      Presidents pres(atoi(number.c_str()), name, birthDeath, tookOffice, leftOffice, party, previousOffice, vicePresident);
+      presidents.add(pres);
+    }
   }
   return presidents;
 }
 
 int askPresidentNumber(string presidentName)
 {
-  int presidentNumber;
+  int presidentNumber = 0;
   cout << "> What is the president number of " << presidentName << "? ";
   cin >> presidentNumber;
+  if (cin.fail())
+  {
+    // clean cin on failures
+    cin.clear();
+    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+  }
   return presidentNumber;
 }
 
@@ -83,7 +92,11 @@ int main()
       }
       cout << "Score: " << to_string(correct) << " out of " << to_string(total) << endl;
     }
-  } while (guess != -1);
+    if (presBag.size() == 0)
+    {
+      cout << "Congratulations! You guessed them all!" << endl;
+    }
+  } while (guess != -1 && presBag.size() > 0);
   cout << "Thank you for playing!" << endl;
   system("pause");
   return 0;
