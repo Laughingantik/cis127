@@ -47,31 +47,17 @@ bag loadPresidents()
   return presidents;
 }
 
-Presidents findPresident(bag presBag, int presNum)
-{
-  Presidents found;
-  for (presBag.first(); !presBag.isDone(); presBag.next())
-  {
-    Presidents pres = presBag.currentItem();
-    if (pres.getPresidentNumber() == presNum)
-    {
-      found = pres;
-    }
-  }
-  return found;
-}
-
 int main()
 {
   printInstructions();
   bag presBag = loadPresidents();
-  int presNum, guess;
+  int index, guess;
   srand((unsigned) time(0));
   do {
-    presNum = rand() % presBag.size();
-    Presidents pres = findPresident(presBag, presNum);
-    guess = askPresidentNumber(pres.getPresidentName());
-    cout << pres.toString() << endl;
+    index = rand() % presBag.size();
+    presBag.setIndex(index);
+    guess = askPresidentNumber(presBag.currentItem().getPresidentName());
+    cout << presBag.currentItem().toString() << endl;
   } while (guess != -1);
   return 0;
   system("pause");
