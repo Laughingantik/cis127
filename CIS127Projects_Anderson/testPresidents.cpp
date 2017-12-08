@@ -46,21 +46,40 @@ bag loadPresidents()
   return presidents;
 }
 
-int main()
+void showPresidents(bag presBag)
 {
-  printInstructions();
-  bag presBag = loadPresidents();
-  // ...
   for (presBag.first(); !presBag.isDone(); presBag.next())
   {
     Presidents pres = presBag.currentItem();
     cout << pres.getPresidentNumber() << ": " << pres.getPresidentName() << endl;
   }
-  // ...
-  // int guess;
-  // do {
-  //   guess = askPresidentNumber("Barack Obama");
-  // } while (guess != -1);
+}
+
+string getPresidentName(bag presBag, int presNum)
+{
+  string presName = "";
+  for (presBag.first(); !presBag.isDone(); presBag.next())
+  {
+    Presidents pres = presBag.currentItem();
+    if (pres.getPresidentNumber() == presNum)
+    {
+      presName = pres.getPresidentName();
+    }
+  }
+  return presName;
+}
+
+int main()
+{
+  printInstructions();
+  bag presBag = loadPresidents();
+  // showPresidents(presBag);
+  int presNum, guess;
+  srand((unsigned) time(0));
+  do {
+    presNum = rand() % presBag.size();
+    guess = askPresidentNumber(getPresidentName(presBag, presNum));
+  } while (guess != -1);
   return 0;
   system("pause");
 }

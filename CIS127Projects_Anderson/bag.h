@@ -66,8 +66,7 @@ public:
 	bool isDone() const;
 	// post: Returns true if the collection has been traversed
 
-	void setIndex(int Number);
-	//**********idk if this is right*******
+	void setIndex(int number);
 
 	BAG_ELEMENT_TYPE currentItem() const;
 	// pre:  ! isDone && my_size > 0  (remember you don't need to check for pre conditions)
