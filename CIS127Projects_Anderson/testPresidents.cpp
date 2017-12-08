@@ -69,7 +69,7 @@ int main()
   printHeading();
   printInstructions();
   bag presBag = loadPresidents();
-  int index, answer, guess, correct = 0, total = 0;
+  int index, answer, guess = 0, correct = 0, total = 0;
   srand((unsigned) time(0));
   do {
     index = rand() % presBag.size();
