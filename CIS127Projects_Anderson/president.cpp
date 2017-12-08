@@ -112,3 +112,9 @@ bool operator <= (const Presidents & left, const Presidents & right)
 {
   return left.getPresidentName() <= right.getPresidentName();
 }
+
+ostream& operator<<(ostream& out, const Presidents& x)
+{
+  out << x.toString();
+  return out;
+}
