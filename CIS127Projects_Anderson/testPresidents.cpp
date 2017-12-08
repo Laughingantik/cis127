@@ -76,6 +76,7 @@ int main()
     total += 1;
     presBag.setIndex(index);
     answer = presBag.currentItem().getPresidentNumber();
+    guess = askPresidentNumber(presBag.currentItem().getPresidentName());
     cout << "guess: " << to_string(guess) << "; index: " << to_string(index) << endl;
     if (guess != -1)
     {
