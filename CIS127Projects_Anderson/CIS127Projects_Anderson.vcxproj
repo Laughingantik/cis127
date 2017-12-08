@@ -19,12 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="bag.cpp" />
     <ClCompile Include="president.cpp" />
     <ClCompile Include="testPresidents.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="bag.h" />
     <ClInclude Include="president.h" />
   </ItemGroup>
   <ItemGroup>

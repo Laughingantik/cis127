@@ -62,4 +62,5 @@ int main()
   //   guess = askPresidentNumber("Barack Obama");
   // } while (guess != -1);
   return 0;
+  system("pause");
 }
